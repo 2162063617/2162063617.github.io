@@ -6,7 +6,16 @@
         <description>Recent content in Categories on why</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-ch</language>
-        <copyright>why</copyright><atom:link href="https://2162063617.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>why</copyright>
+        <lastBuildDate>Sun, 18 Jan 2026 19:51:46 +0800</lastBuildDate><atom:link href="https://2162063617.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>生活</title>
+        <link>https://2162063617.github.io/categories/%E7%94%9F%E6%B4%BB/</link>
+        <pubDate>Sun, 18 Jan 2026 19:51:46 +0800</pubDate>
+        
+        <guid>https://2162063617.github.io/categories/%E7%94%9F%E6%B4%BB/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Test</title>
         <link>https://2162063617.github.io/categories/test/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
