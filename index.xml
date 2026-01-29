@@ -52,7 +52,7 @@
 	loading=&#34;lazy&#34;
 	
 	
-	style=&#34;display: block !important; margin: 20px auto !important; height: auto !important; border-radius: 8px !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;&#34;
+	style=&#34;display: block !important; margin: 20px auto !important; max-width: 100% !important; height: auto !important; border-radius: 8px !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;&#34;
 &gt;
 &lt;br&gt;
 花40买了1年的阿里云服务器&lt;br&gt;
@@ -63,7 +63,7 @@
 	loading=&#34;lazy&#34;
 	
 	
-	style=&#34;display: block !important; margin: 20px auto !important; height: auto !important; border-radius: 8px !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;&#34;
+	style=&#34;display: block !important; margin: 20px auto !important; max-width: 100% !important; height: auto !important; border-radius: 8px !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;&#34;
 &gt;
 &lt;br&gt;
 空着也是空着，就想在上面搭建点什么，最后想来想去想到了博客&lt;br&gt;
@@ -74,7 +74,7 @@
 	loading=&#34;lazy&#34;
 	
 	
-	style=&#34;display: block !important; margin: 20px auto !important; height: auto !important; border-radius: 8px !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;&#34;
+	style=&#34;display: block !important; margin: 20px auto !important; max-width: 100% !important; height: auto !important; border-radius: 8px !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;&#34;
 &gt;
 &lt;br&gt;
 然后随着对博客研究的深入，发现完全可以搭建一个静态博客，最后服务器还是没用上，但是博客搭起来了，会在上面想到什么写什么，分享自己生活中的事，当作写一个日记本了。&lt;/p&gt;
