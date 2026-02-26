@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>why</title>
-        <link>http://localhost:1313/</link>
-        <description>Recent content on why</description>
+        <title>生活 on why</title>
+        <link>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/</link>
+        <description>Recent content in 生活 on why</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-ch</language>
         <copyright>why</copyright>
-        <lastBuildDate>Fri, 27 Feb 2026 00:59:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 27 Feb 2026 00:59:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>26年第一篇文章</title>
         <link>http://localhost:1313/p/26%E5%B9%B4%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</link>
         <pubDate>Fri, 27 Feb 2026 00:59:20 +0800</pubDate>
@@ -62,31 +62,6 @@
 	
 &gt;，空着也是空着,就想在上面搭建点什么，最后想来想去想到了博客，然后，随着对博客研究的深入，发现完全可以搭建一个静态博客，最后服务器还是没用上，但是博客搭起来了，会在上面想到什么写什么，分享自己生活中的事，当作写一个日记本了。&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>自我介绍</title>
-        <link>http://localhost:1313/p/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/</link>
-        <pubDate>Sun, 18 Jan 2026 18:57:46 +0800</pubDate>
-        
-        <guid>http://localhost:1313/p/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/</guid>
-        <description>&lt;p&gt;我是一名在&lt;strong&gt;杭州职高&lt;/strong&gt;就读高一学生，玩的游戏有CS2，鸣潮，崩铁，战地1，喜欢&lt;em&gt;探索未知&lt;/em&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>归档</title>
-        <link>http://localhost:1313/archives/</link>
-        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/archives/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>搜索</title>
-        <link>http://localhost:1313/search/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/search/</guid>
-        <description></description>
         </item>
         
     </channel>
