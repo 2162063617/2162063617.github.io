@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on why</title>
-        <link>http://localhost:1313/categories/</link>
+        <link>https://2162063617.github.io/categories/</link>
         <description>Recent content in Categories on why</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-ch</language>
         <copyright>why</copyright>
-        <lastBuildDate>Fri, 27 Feb 2026 00:59:20 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 01 Mar 2026 05:04:26 +0800</lastBuildDate><atom:link href="https://2162063617.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>生活</title>
-        <link>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/</link>
-        <pubDate>Fri, 27 Feb 2026 00:59:20 +0800</pubDate>
+        <link>https://2162063617.github.io/categories/%E7%94%9F%E6%B4%BB/</link>
+        <pubDate>Sun, 01 Mar 2026 05:04:26 +0800</pubDate>
         
-        <guid>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/</guid>
+        <guid>https://2162063617.github.io/categories/%E7%94%9F%E6%B4%BB/</guid>
         <description></description>
         </item>
         
