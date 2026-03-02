@@ -258,22 +258,36 @@
 
             </main>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.d140352ad1f58c509fb168198e65f24a9097619b0d57865c9a7964c26e41d1bf.js" defer></script><script type="text/javascript" src="/ts/custom.1d62ac864330a3564f3a8c376ce99e3d0aac74a748995be18c04565aeac10c35.js" defer></script>
+        <script type="text/javascript" src="/ts/main.108169e832876b72ecbb80b727cfc8669b75f0c8a034edb52a241e54293def0d.js" defer></script><script type="text/javascript" src="/ts/custom.1d62ac864330a3564f3a8c376ce99e3d0aac74a748995be18c04565aeac10c35.js" defer></script>
 <script>
     (function () {
+        const preconnectGoogleapis = document.createElement('link');
+        preconnectGoogleapis.rel = 'preconnect';
+        preconnectGoogleapis.href = 'https://fonts.googleapis.com';
+
+        const preconnectGstatic = document.createElement('link');
+        preconnectGstatic.rel = 'preconnect';
+        preconnectGstatic.href = 'https://fonts.gstatic.com';
+        preconnectGstatic.crossOrigin = 'anonymous';
+
         const customFont = document.createElement('link');
         customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
 
         customFont.type = "text/css";
         customFont.rel = "stylesheet";
+        customFont.media = 'print';
+        customFont.onload = function () {
+            customFont.media = 'all';
+        };
 
+        document.head.appendChild(preconnectGoogleapis);
+        document.head.appendChild(preconnectGstatic);
         document.head.appendChild(customFont);
     }());
 </script>
+<noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+</noscript>
 <script>
 (function () {
   const preventIfMultiTouch = function (event) {
