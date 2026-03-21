@@ -22,12 +22,12 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;-100-ai-驱动的开发奇迹&#34;&gt;🤖 100% AI 驱动的开发奇迹
 &lt;/h2&gt;&lt;p&gt;回顾整个开发过程，版本控制记录显示了惊人的 &lt;strong&gt;148 次提交&lt;/strong&gt;。而最令我自豪的是：&lt;strong&gt;本项目所有代码均由 AI 生成，人工干预为 0%&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;这背后离不开 &lt;strong&gt;GPT-5.4&lt;/strong&gt; 模型的强力支持（是的，我们已跨越到未来版本）。从架构设计到细节调试，AI 全程主导，让我得以专注于创意与逻辑的验证。&lt;/p&gt;
+&lt;p&gt;这背后离不开 &lt;strong&gt;GPT-5.4&lt;/strong&gt; 模型的强力支持（是的，我们已使用最先进技术）。从架构设计到细节调试，AI 全程主导，让我得以专注于创意与逻辑的验证。&lt;/p&gt;
 &lt;p&gt;&lt;picture&gt;
 	
-	&lt;source type=&#34;image/avif&#34; srcset=&#34;https://2162063617.github.io/generated/image-variants/eec47be2b927/0a87919bd945/responsive_content-480.avif 480w, https://2162063617.github.io/generated/image-variants/eec47be2b927/0a87919bd945/responsive_content-1440.avif 1440w&#34; sizes=&#34;(min-width: 1024px) 864px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)&#34;&gt;
+	&lt;source type=&#34;image/avif&#34; srcset=&#34;https://2162063617.github.io/generated/image-variants/7941703d945d/0a87919bd945/responsive_content-480.avif 480w, https://2162063617.github.io/generated/image-variants/7941703d945d/0a87919bd945/responsive_content-1440.avif 1440w&#34; sizes=&#34;(min-width: 1024px) 864px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)&#34;&gt;
 	
-	&lt;source type=&#34;image/webp&#34; srcset=&#34;https://2162063617.github.io/generated/image-variants/eec47be2b927/0a87919bd945/responsive_content-480.webp 480w, https://2162063617.github.io/generated/image-variants/eec47be2b927/0a87919bd945/responsive_content-1440.webp 1440w&#34; sizes=&#34;(min-width: 1024px) 864px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)&#34;&gt;&lt;img src=&#34;https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/1.png&#34; width=&#34;3395&#34;  height=&#34;1845&#34;  srcset=&#34;https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/1_hu_52d5afc87ee70d4c.png 480w, https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/1_hu_aa987584f33b3a10.png 1440w&#34;  sizes=&#34;(min-width: 1024px) 864px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)&#34; loading=&#34;eager&#34; decoding=&#34;async&#34; fetchpriority=&#34;high&#34; data-lightbox-src=&#34;https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/1.png&#34;  alt=&#34;148 次提交记录截图&#34;   class=&#34;gallery-image&#34;
+	&lt;source type=&#34;image/webp&#34; srcset=&#34;https://2162063617.github.io/generated/image-variants/7941703d945d/0a87919bd945/responsive_content-480.webp 480w, https://2162063617.github.io/generated/image-variants/7941703d945d/0a87919bd945/responsive_content-1440.webp 1440w&#34; sizes=&#34;(min-width: 1024px) 864px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)&#34;&gt;&lt;img src=&#34;https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/github.png&#34; width=&#34;3395&#34;  height=&#34;1845&#34;  srcset=&#34;https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/github_hu_52d5afc87ee70d4c.png 480w, https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/github_hu_aa987584f33b3a10.png 1440w&#34;  sizes=&#34;(min-width: 1024px) 864px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 32px)&#34; loading=&#34;eager&#34; decoding=&#34;async&#34; fetchpriority=&#34;high&#34; data-lightbox-src=&#34;https://2162063617.github.io/p/%E7%BD%91%E7%AB%99%E8%BF%91%E6%9C%9F%E6%9B%B4%E6%96%B0/github.png&#34;  alt=&#34;148 次提交记录截图&#34;   class=&#34;gallery-image&#34;
 		data-flex-grow=&#34;184&#34;
 		data-flex-basis=&#34;441px&#34; &gt;&lt;/picture&gt;
 
@@ -40,7 +40,7 @@
 &lt;li&gt;🔗 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://proxy.pieixan.icu/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;proxy.pieixan.icu&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;感谢 &lt;strong&gt;&amp;ldquo;91&amp;rdquo;&lt;/strong&gt; 与 &lt;strong&gt;“稀有气体公益站”&lt;/strong&gt; 背后的默默付出。你们是我坚实的后盾，承担了本次重构中巨额的 Token 消耗。粗略估算，本次生成的 Token 总量可能高达 &lt;strong&gt;5000 万+&lt;/strong&gt;，而我的实际花费仅为 &lt;strong&gt;0 元&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;感谢 &lt;strong&gt;&amp;ldquo;91公益站&amp;rdquo;&lt;/strong&gt; 与 &lt;strong&gt;“稀有气体公益站”&lt;/strong&gt; 背后的默默付出。你们是我坚实的后盾，承担了本次重构中巨额的 Token 消耗。粗略估算，本次生成的 Token 总量可能高达 &lt;strong&gt;5000 万+&lt;/strong&gt;，而我的实际花费仅为 &lt;strong&gt;0 元&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;在公益事业有你们这样的支持者，让我能够毫无后顾之忧地探索技术边界。这份信任与支持，是我继续前行的最大动力。&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
