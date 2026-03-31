@@ -1,11 +1,131 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Tags on why</title>
-        <link>https://2162063617.github.io/tags/</link>
-        <description>Recent content in Tags on why</description>
+        <title>标签 on why</title>
+        <link>https://whylove.top/tags/</link>
+        <description>Recent content in 标签 on why</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>why</copyright><atom:link href="https://2162063617.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>why</copyright><atom:link href="https://whylove.top/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>生活</title>
+        <link>https://whylove.top/tags/%E7%94%9F%E6%B4%BB/</link>
+        <pubDate>Fri, 27 Mar 2026 10:45:58 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E7%94%9F%E6%B4%BB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>随笔</title>
+        <link>https://whylove.top/tags/%E9%9A%8F%E7%AC%94/</link>
+        <pubDate>Fri, 27 Mar 2026 10:45:58 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E9%9A%8F%E7%AC%94/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>校园</title>
+        <link>https://whylove.top/tags/%E6%A0%A1%E5%9B%AD/</link>
+        <pubDate>Fri, 27 Mar 2026 10:45:58 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E6%A0%A1%E5%9B%AD/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>https://whylove.top/tags/ai/</link>
+        <pubDate>Sat, 21 Mar 2026 18:57:04 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hugo</title>
+        <link>https://whylove.top/tags/hugo/</link>
+        <pubDate>Sat, 21 Mar 2026 18:57:04 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/hugo/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Swup</title>
+        <link>https://whylove.top/tags/swup/</link>
+        <pubDate>Sat, 21 Mar 2026 18:57:04 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/swup/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>前端</title>
+        <link>https://whylove.top/tags/%E5%89%8D%E7%AB%AF/</link>
+        <pubDate>Sat, 21 Mar 2026 18:57:04 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E5%89%8D%E7%AB%AF/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>图片优化</title>
+        <link>https://whylove.top/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Sat, 21 Mar 2026 18:57:04 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CDN</title>
+        <link>https://whylove.top/tags/cdn/</link>
+        <pubDate>Sun, 01 Mar 2026 05:04:26 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/cdn/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>备案</title>
+        <link>https://whylove.top/tags/%E5%A4%87%E6%A1%88/</link>
+        <pubDate>Sun, 01 Mar 2026 05:04:26 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E5%A4%87%E6%A1%88/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>博客</title>
+        <link>https://whylove.top/tags/%E5%8D%9A%E5%AE%A2/</link>
+        <pubDate>Sun, 01 Mar 2026 05:04:26 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E5%8D%9A%E5%AE%A2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>服务器</title>
+        <link>https://whylove.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+        <pubDate>Sun, 01 Mar 2026 05:04:26 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>寒假总结</title>
+        <link>https://whylove.top/tags/%E5%AF%92%E5%81%87%E6%80%BB%E7%BB%93/</link>
+        <pubDate>Sun, 01 Mar 2026 05:04:26 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E5%AF%92%E5%81%87%E6%80%BB%E7%BB%93/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>GitHub Pages</title>
+        <link>https://whylove.top/tags/github-pages/</link>
+        <pubDate>Sun, 18 Jan 2026 19:51:46 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/github-pages/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>域名</title>
+        <link>https://whylove.top/tags/%E5%9F%9F%E5%90%8D/</link>
+        <pubDate>Sun, 18 Jan 2026 19:51:46 +0800</pubDate>
+        
+        <guid>https://whylove.top/tags/%E5%9F%9F%E5%90%8D/</guid>
+        <description></description>
+        </item>
+        
     </channel>
 </rss>
