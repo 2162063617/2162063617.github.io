@@ -29,6 +29,7 @@
     class=&#34;gallery-image stack-lazy-image&#34;
     data-lazy-image=&#34;true&#34; data-lazy-state=&#34;preview&#34;
     data-lightbox-enabled=&#34;true&#34;
+    data-lightbox-strategy=&#34;eager&#34;
     data-lightbox-avif=&#34;/generated/image-variants/8c3230204067/9ec4f041b85f/responsive_content-320.avif 320w, /generated/image-variants/8c3230204067/9ec4f041b85f/responsive_content-480.avif 480w, /generated/image-variants/8c3230204067/9ec4f041b85f/responsive_content-1440.avif 1440w&#34;
     data-lightbox-webp=&#34;/generated/image-variants/8c3230204067/9ec4f041b85f/responsive_content-320.webp 320w, /generated/image-variants/8c3230204067/9ec4f041b85f/responsive_content-480.webp 480w, /generated/image-variants/8c3230204067/9ec4f041b85f/responsive_content-1440.webp 1440w&#34;
     data-lightbox-fallback=&#34;/p/%E5%AF%92%E5%81%87%E6%80%BB%E7%BB%93/beian_hu_d5e3723c493d81af.png&#34; data-flex-basis=&#34;441px&#34; data-flex-grow=&#34;184&#34;&gt;&lt;/picture&gt;&lt;/p&gt;
@@ -47,6 +48,7 @@
     class=&#34;gallery-image stack-lazy-image&#34;
     data-lazy-image=&#34;true&#34; data-lazy-state=&#34;preview&#34;
     data-lightbox-enabled=&#34;true&#34;
+    data-lightbox-strategy=&#34;eager&#34;
     data-lightbox-avif=&#34;/generated/image-variants/e9300cf1ffdf/66a631f32317/responsive_content-320.avif 320w, /generated/image-variants/e9300cf1ffdf/66a631f32317/responsive_content-480.avif 480w, /generated/image-variants/e9300cf1ffdf/66a631f32317/responsive_content-1440.avif 1440w&#34;
     data-lightbox-webp=&#34;/generated/image-variants/e9300cf1ffdf/66a631f32317/responsive_content-320.webp 320w, /generated/image-variants/e9300cf1ffdf/66a631f32317/responsive_content-480.webp 480w, /generated/image-variants/e9300cf1ffdf/66a631f32317/responsive_content-1440.webp 1440w&#34;
     data-lightbox-fallback=&#34;/p/%E5%AF%92%E5%81%87%E6%80%BB%E7%BB%93/cdn-speed_hu_ac3eb44588544954.png&#34; data-flex-basis=&#34;441px&#34; data-flex-grow=&#34;184&#34;&gt;&lt;/picture&gt;
@@ -66,6 +68,7 @@
     class=&#34;gallery-image stack-lazy-image&#34;
     data-lazy-image=&#34;true&#34; data-lazy-state=&#34;preview&#34;
     data-lightbox-enabled=&#34;true&#34;
+    data-lightbox-strategy=&#34;eager&#34;
     data-lightbox-avif=&#34;/generated/image-variants/0b62cc24f85a/35b66227bfcc/responsive_content-320.avif 320w, /generated/image-variants/0b62cc24f85a/35b66227bfcc/responsive_content-480.avif 480w, /generated/image-variants/0b62cc24f85a/35b66227bfcc/responsive_content-1440.avif 1440w&#34;
     data-lightbox-webp=&#34;/generated/image-variants/0b62cc24f85a/35b66227bfcc/responsive_content-320.webp 320w, /generated/image-variants/0b62cc24f85a/35b66227bfcc/responsive_content-480.webp 480w, /generated/image-variants/0b62cc24f85a/35b66227bfcc/responsive_content-1440.webp 1440w&#34;
     data-lightbox-fallback=&#34;/p/%E5%AF%92%E5%81%87%E6%80%BB%E7%BB%93/astrbot_hu_f93a8ffe82754ebc.png&#34; data-flex-basis=&#34;441px&#34; data-flex-grow=&#34;184&#34;&gt;&lt;/picture&gt;
@@ -83,6 +86,7 @@
     class=&#34;gallery-image stack-lazy-image&#34;
     data-lazy-image=&#34;true&#34; data-lazy-state=&#34;preview&#34;
     data-lightbox-enabled=&#34;true&#34;
+    data-lightbox-strategy=&#34;eager&#34;
     data-lightbox-avif=&#34;/generated/image-variants/66c75b190b2a/cb6587f74e21/responsive_content-320.avif 320w, /generated/image-variants/66c75b190b2a/cb6587f74e21/responsive_content-480.avif 480w, /generated/image-variants/66c75b190b2a/cb6587f74e21/responsive_content-1440.avif 1440w&#34;
     data-lightbox-webp=&#34;/generated/image-variants/66c75b190b2a/cb6587f74e21/responsive_content-320.webp 320w, /generated/image-variants/66c75b190b2a/cb6587f74e21/responsive_content-480.webp 480w, /generated/image-variants/66c75b190b2a/cb6587f74e21/responsive_content-1440.webp 1440w&#34;
     data-lightbox-fallback=&#34;/p/%E5%AF%92%E5%81%87%E6%80%BB%E7%BB%93/openlist_hu_43aec9e9fd8eba74.png&#34; data-flex-basis=&#34;441px&#34; data-flex-grow=&#34;184&#34;&gt;&lt;/picture&gt;博客现在已经不再使用外链图片，改为使用本地图片&lt;/p&gt;
