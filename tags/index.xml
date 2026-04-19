@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>标签 on why</title>
+        <title>Tags on why</title>
         <link>https://whylove.top/tags/</link>
-        <description>Recent content in 标签 on why</description>
+        <description>Recent content in Tags on why</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>why</copyright><atom:link href="https://whylove.top/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>why</copyright>
+        <lastBuildDate>Sat, 21 Mar 2026 18:57:04 +0800</lastBuildDate><atom:link href="https://whylove.top/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI</title>
         <link>https://whylove.top/tags/ai/</link>
         <pubDate>Sat, 21 Mar 2026 18:57:04 +0800</pubDate>
