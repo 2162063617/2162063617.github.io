@@ -13,7 +13,7 @@
   #   3. head/style.html promoteDeferredStyles
   #   4. 404.html 搜索关键词            5. script/client-runtime.html 导航运行时注入(非 idle 策略)
   # 语言切换委托监听器已外部化到 siteStats.ts,不再需要内联脚本哈希。
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'sha256-wADXYXOeNkeAfmZxyhlFMMBPLed6wF7P2feH+qF0QwQ=' 'sha256-+2gCvrlAaTMsihgPY95vbFa+QRyz5cuaidCvDOdNnes=' 'sha256-cx5IWkx3D5iRtVUT7bvqvvZeU5SMr9HIohAQf7+yDI0=' 'sha256-Wx3tI9/oKPpF7UWlEkzfXHfX1gJcoIN2F24nYe3W3Mk=' 'sha256-80lj33SO242OGa8F6WW/UE20r4Hb8K0nRwT4j/ZQm4A=' https://gc.zgo.at/count.js https://giscus.app/client.js; style-src 'self' 'unsafe-inline' https://giscus.app; img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self' blob: https:; frame-src 'self' https://player.bilibili.com https://v.qq.com https://www.youtube.com https://www.youtube-nocookie.com https://giscus.app; connect-src 'self' https://gc.zgo.at https://*.goatcounter.com https://giscus.app; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; script-src 'self' 'sha256-wADXYXOeNkeAfmZxyhlFMMBPLed6wF7P2feH+qF0QwQ=' 'sha256-+2gCvrlAaTMsihgPY95vbFa+QRyz5cuaidCvDOdNnes=' 'sha256-yhRG471b8AFru7tfLp05P52xXE8oHnCET9hXnbByd9I=' 'sha256-Wx3tI9/oKPpF7UWlEkzfXHfX1gJcoIN2F24nYe3W3Mk=' 'sha256-O4Z732TLjU+GQBqpBzG9ifnjtSNF9moTI7ujSLh1RvE=' 'sha256-+vayhfy6+y7h3NBSDSlZkPDD9/ZGXfDoMZe8tENBfrI=' https://gc.zgo.at/count.js https://giscus.app/client.js; style-src 'self' 'unsafe-inline' https://giscus.app; img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self' blob: https:; frame-src 'self' https://player.bilibili.com https://v.qq.com https://www.youtube.com https://www.youtube-nocookie.com https://giscus.app; connect-src 'self' https://gc.zgo.at https://*.goatcounter.com https://giscus.app; worker-src 'self' blob:; manifest-src 'self'; upgrade-insecure-requests
   Cross-Origin-Opener-Policy: same-origin-allow-popups
   Cross-Origin-Resource-Policy: same-origin
   X-Permitted-Cross-Domain-Policies: none
@@ -47,13 +47,9 @@
   Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
 # /assets/* 保留 7 天浏览器缓存(非 immutable)。该目录可能含未指纹化的静态
-# 资源,不能安全地标为 immutable;指纹化的派生图位于 /generated/image-variants/*
-# (见下,已配 immutable)。如确认 /assets/ 全部指纹化后再提升为 immutable。
+# 资源,不能安全地标为 immutable。如确认 /assets/ 全部指纹化后再提升为 immutable。
 /assets/*
   Cache-Control: public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000
-
-/generated/image-variants/*
-  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
 /images/*
   Cache-Control: public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000
@@ -73,6 +69,11 @@
 /p/*.jpeg
   Cache-Control: public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000
 
+# Hugo image resources include a transformation hash and are safe to cache
+# indefinitely without making original page-bundle images stale.
+/p/*_hu_*
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
+
 /p/*.gif
   Cache-Control: public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000
 
@@ -80,7 +81,12 @@
   Cache-Control: public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000
 
 /img/*
-  Cache-Control: public, max-age=604800, s-maxage=2592000, stale-while-revalidate=2592000
+  Cache-Control: public, max-age=2592000, s-maxage=2592000, stale-while-revalidate=2592000
+
+# Keep this rule after /img/* so Hugo's transformed avatar derivatives retain
+# their stronger immutable policy.
+/img/*_hu_*
+  Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable
 
 /fonts/*
   Cache-Control: public, max-age=31536000, s-maxage=31536000, immutable

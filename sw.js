@@ -1,7 +1,7 @@
-// Service Worker - vcfaef47a
+// Service Worker - v6f43c3b7
 // Auto-generated. Do not edit by hand.
 
-const CACHE_VERSION = 'cfaef47a';
+const CACHE_VERSION = '6f43c3b7';
 const PRECACHE_NAME = `precache-${CACHE_VERSION}`;
 const PAGE_CACHE_NAME = `pages-${CACHE_VERSION}`;
 const ASSET_CACHE_NAME = `assets-${CACHE_VERSION}`;
@@ -20,6 +20,14 @@ const MAX_PAGE_ENTRIES = 40;
 // lowering it (e.g. 150) risks re-fetching assets that were already cached.
 const MAX_ASSET_ENTRIES = 300;
 const MAX_PAGE_AGE_MS = 4 * 60 * 60 * 1000;
+// Cache Storage keys() walks the complete cache. Batch writes so bursts of
+// images/scripts do not repeat that O(n) scan after every cache.put(). A cache
+// may temporarily exceed its target by at most one small batch.
+const CACHE_TRIM_BATCH_SIZE = 8;
+// A hover prefetch is commonly consumed within seconds. Revalidating that
+// freshly cached page on click wastes a full HTML transfer without improving
+// freshness, so defer background refreshes until the entry has aged a little.
+const MIN_PAGE_REVALIDATE_AGE_MS = 30 * 1000;
 
 const PRECACHE_URLS = [
   OFFLINE_URL,
@@ -43,6 +51,12 @@ function getPathname(input) {
   }
 }
 
+function isFingerprintedAssetPath(pathname) {
+  const fingerprintPattern = /[.-][a-f0-9]{8,}\.(js|css|mjs)$/i;
+  const hugoImagePattern = /_hu_[a-f0-9]{8,}\.(avif|webp|jpe?g|png)$/i;
+  return fingerprintPattern.test(pathname) || hugoImagePattern.test(pathname);
+}
+
 function normalizePageUrl(input) {
   try {
     const rawUrl = typeof input === 'string' ? input : input.url;
@@ -57,6 +71,24 @@ function normalizePageUrl(input) {
   } catch {
     return typeof input === 'string' ? input : input.url;
   }
+}
+
+function isHtmlNavigationRequest(request) {
+  if (request.mode === 'navigate' || request.destination === 'document') {
+    return true;
+  }
+
+  // Chromium exposes <link rel="prefetch" as="document"> with an empty
+  // destination and Sec-Purpose: prefetch. Treat extensionless prefetches as
+  // pages so the later Swup request can reuse the response from Cache Storage.
+  const purpose = (request.headers.get('sec-purpose') || request.headers.get('purpose') || '').toLowerCase();
+  if (purpose.includes('prefetch') && !isLikelyAssetPath(getPathname(request))) {
+    return true;
+  }
+
+  const requestedWith = (request.headers.get('x-requested-with') || '').toLowerCase();
+  const accept = (request.headers.get('accept') || '').toLowerCase();
+  return requestedWith === 'swup' && accept.includes('text/html');
 }
 
 function isCacheablePrecacheResponse(url, response) {
@@ -195,6 +227,7 @@ function extractOfflineAssetUrls(html) {
   }
 
   assetUrls.delete(OFFLINE_URL);
+  assetUrls.delete(MANIFEST_URL);
   return [...assetUrls];
 }
 
@@ -233,8 +266,10 @@ async function trimCache(cacheName, maxEntries, maxAgeMs = 0) {
     return;
   }
 
-  // Fast path: no TTL eviction and under the count limit.
-  if (maxAgeMs <= 0 && keys.length <= maxEntries) {
+  // The cache is already bounded. TTL affects response freshness in
+  // handleNavigationRequest; storage cleanup only needs to scan once the
+  // entry limit is exceeded.
+  if (keys.length <= maxEntries) {
     return;
   }
 
@@ -266,17 +301,64 @@ async function trimCache(cacheName, maxEntries, maxAgeMs = 0) {
   await Promise.all(excessKeys.map((key) => cache.delete(key)));
 }
 
+const cacheWriteCounts = new Map();
+const pendingCacheTrims = new Map();
+// Service workers are routinely terminated between visits. Scan once on the
+// first write of each worker lifetime so an over-limit persistent cache cannot
+// evade trimming merely because every lifetime performs fewer than one batch.
+const initializedCacheTrims = new Set();
+
+function runScheduledCacheTrim(cacheName, maxEntries, maxAgeMs) {
+  const pending = pendingCacheTrims.get(cacheName);
+  if (pending) {
+    return pending;
+  }
+
+  cacheWriteCounts.set(cacheName, 0);
+  let request;
+  request = trimCache(cacheName, maxEntries, maxAgeMs).finally(() => {
+    if (pendingCacheTrims.get(cacheName) === request) {
+      pendingCacheTrims.delete(cacheName);
+    }
+
+    // Writes can finish while keys() is scanning. Preserve their count and
+    // immediately run one follow-up batch only when they reach the threshold.
+    if ((cacheWriteCounts.get(cacheName) || 0) >= CACHE_TRIM_BATCH_SIZE) {
+      return runScheduledCacheTrim(cacheName, maxEntries, maxAgeMs);
+    }
+    return undefined;
+  });
+  pendingCacheTrims.set(cacheName, request);
+  return request;
+}
+
+function scheduleCacheTrim(cacheName, maxEntries, maxAgeMs = 0) {
+  const writeCount = (cacheWriteCounts.get(cacheName) || 0) + 1;
+  cacheWriteCounts.set(cacheName, writeCount);
+  if (!initializedCacheTrims.has(cacheName)) {
+    initializedCacheTrims.add(cacheName);
+    return runScheduledCacheTrim(cacheName, maxEntries, maxAgeMs);
+  }
+  if (writeCount < CACHE_TRIM_BATCH_SIZE) {
+    return Promise.resolve();
+  }
+
+  return runScheduledCacheTrim(cacheName, maxEntries, maxAgeMs);
+}
+
 async function cacheResponse(cacheName, request, response, maxEntries, maxAgeMs = 0) {
   const cache = await caches.open(cacheName);
   await cache.put(request, withCacheTimestamp(response));
-  await trimCache(cacheName, maxEntries, maxAgeMs);
+  await scheduleCacheTrim(cacheName, maxEntries, maxAgeMs);
 }
 
 async function cacheOfflineAssets(assetUrls, cache) {
   await Promise.all(
     assetUrls.map(async (url) => {
       try {
-        const request = new Request(url, { cache: 'reload' });
+        const request = isFingerprintedAssetPath(getPathname(url))
+          ? new Request(url)
+          : new Request(url, { cache: 'reload' });
         const response = await fetch(request);
 
         if (!isCacheableAssetResponse(request, response) && !isCacheablePrecacheResponse(url, response)) {
@@ -367,7 +449,11 @@ async function handleNavigationRequest(event) {
 
     if (cachedAge < 0 || cachedAge < MAX_PAGE_AGE_MS) {
       // Fresh cached HTML is served immediately and refreshed in the background.
-      fetchAndCachePage(event, request, cacheKey).catch(() => {});
+      // A just-completed hover prefetch is already current; avoid fetching the
+      // same document again when the user clicks it a moment later.
+      if (cachedAge < 0 || cachedAge >= MIN_PAGE_REVALIDATE_AGE_MS) {
+        fetchAndCachePage(event, request, cacheKey).catch(() => {});
+      }
       return cachedResponse;
     }
 
@@ -495,7 +581,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  if (request.mode === 'navigate' || request.destination === 'document') {
+  if (isHtmlNavigationRequest(request)) {
     event.respondWith(handleNavigationRequest(event));
     return;
   }
@@ -505,15 +591,17 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Hugo 生产环境通过 resources.Fingerprint "sha256" 对 JS/CSS 做指纹化；
-  // 预生成图片的内容摘要位于 /generated/image-variants/<source>/<digest>/。
-  // 这些 URL 内容寻址且不可变，直接 cache-first，避免每次命中后重复 fetch
-  // 和 Cache.put。无指纹入口仍走 network-first 以保证更新及时生效。
+  // Hugo 生产环境通过 resources.Fingerprint "sha256" 对 JS/CSS 做指纹化。
+  // 原生 Hugo 图像处理资源带有 `_hu_<hash>`，同样是内容/转换寻址的不可变 URL。
+  // 这些 URL 直接 cache-first，避免每次命中后重复 fetch 和 Cache.put；无指纹
+  // 入口仍走 network-first 以保证更新及时生效。
   const fingerprintPattern = /[.-][a-f0-9]{8,}\.(js|css|mjs)$/i;
+  // Hugo's hash is hexadecimal but its length is not a public fixed-width API.
+  const hugoImagePattern = /_hu_[a-f0-9]{8,}\.(avif|webp|jpe?g|png)$/i;
   const isFingerprinted = fingerprintPattern.test(url.pathname);
-  const isGeneratedImageVariant = url.pathname.startsWith(resolveBasePath('generated/image-variants/'));
+  const isHugoProcessedImage = hugoImagePattern.test(url.pathname);
 
-  if (isFingerprinted || isGeneratedImageVariant) {
+  if (isFingerprinted || isHugoProcessedImage) {
     event.respondWith(handleCacheFirstAsset(event));
     return;
   }
@@ -545,4 +633,4 @@ self.addEventListener('message', (event) => {
   }
 });
 
-console.log('[SW] Service Worker vcfaef47a loaded');
+console.log('[SW] Service Worker v6f43c3b7 loaded');
